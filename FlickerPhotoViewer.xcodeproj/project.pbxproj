@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		298556C4642E4681094F7B98 /* Pods_FlickerPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335A979491C2C12A198ED2E /* Pods_FlickerPhotoViewer.framework */; };
+		B8068E051F1F5EEE00D54653 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8068E031F1F5EEE00D54653 /* MBProgressHUD.m */; };
+		B8068E061F1F5EEE00D54653 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8068E041F1F5EEE00D54653 /* ParentViewController.swift */; };
+		B81320061F20C8300038FE6B /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320051F20C8300038FE6B /* LandingViewController.swift */; };
+		B813200F1F20D9460038FE6B /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B813200B1F20D9460038FE6B /* MFSideMenuContainerViewController.m */; };
+		B81320101F20D9460038FE6B /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = B813200C1F20D9460038FE6B /* MFSideMenuShadow.m */; };
+		B81320111F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B813200E1F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m */; };
+		B81320131F20DB080038FE6B /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320121F20DB080038FE6B /* SideViewController.swift */; };
+		B81320151F20DB190038FE6B /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320141F20DB190038FE6B /* SideMenuTableViewCell.swift */; };
+		B81320171F20EC960038FE6B /* userTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320161F20EC960038FE6B /* userTableViewCell.swift */; };
+		B81320191F20F5B80038FE6B /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320181F20F5B80038FE6B /* FullImageVC.swift */; };
 		B8786A711F1CA5E60047294E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A701F1CA5E60047294E /* AppDelegate.swift */; };
 		B8786A731F1CA5E60047294E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A721F1CA5E60047294E /* MainVC.swift */; };
 		B8786A761F1CA5E60047294E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8786A741F1CA5E60047294E /* Main.storyboard */; };
@@ -23,6 +33,22 @@
 		5335A979491C2C12A198ED2E /* Pods_FlickerPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6908639A7843020CDA43056C /* Pods-FlickerPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerPhotoViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerPhotoViewer/Pods-FlickerPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
 		6F5049B3BFA4B17370508B3C /* Pods-FlickerPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerPhotoViewer/Pods-FlickerPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		B8068E011F1F5EED00D54653 /* FlickerPhotoViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlickerPhotoViewer-Bridging-Header.h"; sourceTree = "<group>"; };
+		B8068E021F1F5EEE00D54653 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B8068E031F1F5EEE00D54653 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B8068E041F1F5EEE00D54653 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		B81320051F20C8300038FE6B /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		B81320081F20D9460038FE6B /* MFSideMenuShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenuShadow.h; sourceTree = "<group>"; };
+		B81320091F20D9460038FE6B /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenu.h; sourceTree = "<group>"; };
+		B813200A1F20D9460038FE6B /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
+		B813200B1F20D9460038FE6B /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
+		B813200C1F20D9460038FE6B /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSideMenuShadow.m; sourceTree = "<group>"; };
+		B813200D1F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
+		B813200E1F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		B81320121F20DB080038FE6B /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		B81320141F20DB190038FE6B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		B81320161F20EC960038FE6B /* userTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userTableViewCell.swift; sourceTree = "<group>"; };
+		B81320181F20F5B80038FE6B /* FullImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
 		B8786A6D1F1CA5E60047294E /* FlickerPhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerPhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8786A701F1CA5E60047294E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8786A721F1CA5E60047294E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -56,6 +82,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B81320071F20D9350038FE6B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B81320081F20D9460038FE6B /* MFSideMenuShadow.h */,
+				B81320091F20D9460038FE6B /* MFSideMenu.h */,
+				B813200A1F20D9460038FE6B /* MFSideMenuContainerViewController.h */,
+				B813200B1F20D9460038FE6B /* MFSideMenuContainerViewController.m */,
+				B813200C1F20D9460038FE6B /* MFSideMenuShadow.m */,
+				B813200D1F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.h */,
+				B813200E1F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		B8786A641F1CA5E60047294E = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +117,7 @@
 		B8786A6F1F1CA5E60047294E /* FlickerPhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				B81320071F20D9350038FE6B /* SideMenu */,
 				B8786A821F1CA6250047294E /* Model */,
 				B8786A831F1CA62E0047294E /* View */,
 				B8786A841F1CA6340047294E /* Controller */,
@@ -102,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				B8786A851F1CADE90047294E /* FlickrCell.swift */,
+				B81320141F20DB190038FE6B /* SideMenuTableViewCell.swift */,
+				B81320161F20EC960038FE6B /* userTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,6 +154,9 @@
 			children = (
 				B8786A721F1CA5E60047294E /* MainVC.swift */,
 				B89424C31F1CD22F0003CD33 /* UserPhotosVC.swift */,
+				B81320051F20C8300038FE6B /* LandingViewController.swift */,
+				B81320121F20DB080038FE6B /* SideViewController.swift */,
+				B81320181F20F5B80038FE6B /* FullImageVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -118,7 +164,11 @@
 		B8786A891F1CB55B0047294E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8068E021F1F5EEE00D54653 /* MBProgressHUD.h */,
+				B8068E031F1F5EEE00D54653 /* MBProgressHUD.m */,
+				B8068E041F1F5EEE00D54653 /* ParentViewController.swift */,
 				B8786A8A1F1CB5720047294E /* Constants.swift */,
+				B8068E011F1F5EED00D54653 /* FlickerPhotoViewer-Bridging-Header.h */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -167,6 +217,7 @@
 				TargetAttributes = {
 					B8786A6C1F1CA5E60047294E = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,9 +309,19 @@
 				B89424C41F1CD22F0003CD33 /* UserPhotosVC.swift in Sources */,
 				B8786A8B1F1CB5720047294E /* Constants.swift in Sources */,
 				B8786A861F1CADE90047294E /* FlickrCell.swift in Sources */,
+				B81320101F20D9460038FE6B /* MFSideMenuShadow.m in Sources */,
 				B8786A881F1CB3BE0047294E /* FlickrUser.swift in Sources */,
 				B8786A731F1CA5E60047294E /* MainVC.swift in Sources */,
 				B8786A711F1CA5E60047294E /* AppDelegate.swift in Sources */,
+				B8068E061F1F5EEE00D54653 /* ParentViewController.swift in Sources */,
+				B81320061F20C8300038FE6B /* LandingViewController.swift in Sources */,
+				B81320131F20DB080038FE6B /* SideViewController.swift in Sources */,
+				B81320111F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				B81320191F20F5B80038FE6B /* FullImageVC.swift in Sources */,
+				B81320171F20EC960038FE6B /* userTableViewCell.swift in Sources */,
+				B81320151F20DB190038FE6B /* SideMenuTableViewCell.swift in Sources */,
+				B8068E051F1F5EEE00D54653 /* MBProgressHUD.m in Sources */,
+				B813200F1F20D9460038FE6B /* MFSideMenuContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,10 +445,13 @@
 			baseConfigurationReference = 6F5049B3BFA4B17370508B3C /* Pods-FlickerPhotoViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FlickerPhotoViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlickerPhotoViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlickerPhotoViewer/FlickerPhotoViewer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -397,10 +461,12 @@
 			baseConfigurationReference = 6908639A7843020CDA43056C /* Pods-FlickerPhotoViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FlickerPhotoViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlickerPhotoViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlickerPhotoViewer/FlickerPhotoViewer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -17,8 +17,7 @@ class FlickrCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(flickrUser :FlickrUser)
-    {
+    func configureCell(flickrUser :FlickrUser) {
         if flickrUser.imageTitle == ""
         {
             self.titleLabel.text = "No Title"
@@ -28,19 +27,10 @@ class FlickrCell: UITableViewCell {
             self.titleLabel.text = flickrUser.imageTitle
         }
         
-        
-        let url = URL(string: "https://farm\(flickrUser.farm).staticflickr.com/\(flickrUser.server)/\(flickrUser.imageID)_\(flickrUser.secret).jpg")
-        
-        print("https://farm\(flickrUser.farm).staticflickr.com/\(flickrUser.server)/\(flickrUser.imageID)_\(flickrUser.secret).jpg")
-        
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                self.flickrImage.image = UIImage(data: data!)
-            }
-        }
+        let urlString = "https://farm\(flickrUser.farm).staticflickr.com/\(flickrUser.server)/\(flickrUser.imageID)_\(flickrUser.secret).jpg"
+        let url = URL(string: urlString)
+        self.flickrImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
     }
-
 
 
 }

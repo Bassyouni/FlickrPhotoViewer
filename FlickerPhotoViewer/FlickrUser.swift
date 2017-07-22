@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FlickrUser
 {
@@ -16,6 +17,7 @@ class FlickrUser
     private var _farm  : String!
     private var _imageID :String!
     private var _imageTitle :String!
+    private var _image: UIImage?
     
     init(dic :Dictionary<String , AnyObject>) {
         self._imageID = dic["id"] as? String
@@ -24,6 +26,7 @@ class FlickrUser
         self._server = dic["server"] as? String
         self._farm = "\(dic["farm"] as? Int ?? -1)"
         self._imageTitle = dic["title"] as? String
+        
     }
     
     //MARK: - getters
@@ -55,6 +58,22 @@ class FlickrUser
     var imageTitle: String
     {
         get { return _imageTitle }
+    }
+    
+    var image: UIImage?
+    {
+        get {
+            if _image == nil {
+                return nil
+            }
+            else
+            {
+                return _image!
+            }
+        }
+        set {
+            _image = newValue
+        }
     }
     
     

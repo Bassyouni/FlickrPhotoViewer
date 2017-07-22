@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 
-class UserPhotosVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class UserPhotosVC: ParentViewController , UITableViewDelegate , UITableViewDataSource {
     
     //MARK: - iboutlet
     @IBOutlet weak var tableView: UITableView!
+
     
     //MARK: - variables
     var usersPhotoArray = [FlickrUser]()
@@ -23,8 +24,10 @@ class UserPhotosVC: UIViewController , UITableViewDelegate , UITableViewDataSour
         print(urlForGetUserPhotos)
         tableView.delegate = self
         tableView.dataSource = self
+        showLoading()
         grabDataFromApi {
             self.tableView.reloadData()
+            self.hideLoading()
         }
     }
     
@@ -74,7 +77,7 @@ class UserPhotosVC: UIViewController , UITableViewDelegate , UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "FlickrCell", for: indexPath) as? FlickrCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "FlickrCell", for: indexPath) as? userTableViewCell
         {
             cell.configureCell(flickrUser: usersPhotoArray[indexPath.row])
             return cell
@@ -86,8 +89,26 @@ class UserPhotosVC: UIViewController , UITableViewDelegate , UITableViewDataSour
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {        return 150
+
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "FullImageVC", sender: usersPhotoArray[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? FullImageVC
+        {
+            if let user = sender as? FlickrUser
+            {
+               destination.currentUser = user
+            }
+        }
+    }
+    
+
+    
+
 
 }

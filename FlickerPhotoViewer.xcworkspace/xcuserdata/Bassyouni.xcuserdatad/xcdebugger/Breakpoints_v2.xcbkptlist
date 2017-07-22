@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlickerPhotoViewer/FlickrUser.swift"
-            timestampString = "521978930.010721"
+            timestampString = "522162459.511893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "imageID"
             landmarkType = "24">
          </BreakpointContent>

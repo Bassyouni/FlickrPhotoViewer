@@ -5,6 +5,7 @@ use_frameworks!
 
   target 'FlickerPhotoViewer' do
   pod 'Alamofire', '~> 4.0'
+  pod 'SDWebImage'
 
   end
 

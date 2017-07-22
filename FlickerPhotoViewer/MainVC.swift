@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class MainVC: UIViewController , UITableViewDelegate , UITableViewDataSource , UISearchBarDelegate {
+class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource , UISearchBarDelegate {
     
     //MARK: - iboutlets
     @IBOutlet weak var tableView: UITableView!
@@ -18,22 +18,34 @@ class MainVC: UIViewController , UITableViewDelegate , UITableViewDataSource , U
     var inSearchMode: Bool!
     var flickrUserArray = [FlickrUser]()
     var flickrUserFilterdArray = [FlickrUser]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inSearchMode = false
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        showLoading()
         self.grabDataFromApi {
+            
+            self.hideLoading()
             self.tableView.reloadData()
+            
         }
-        print(urlForGetRecent)
-        inSearchMode = false
+        
        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     //MARK: - Api Call
+    /// This fucntion uses Alamofire to make json calls and return latest flickr intersting photos & it's info
+    ///
+    /// - Parameter complete:
     func grabDataFromApi(complete :@escaping downloadCompleted)
     {
         Alamofire.request(urlForGetRecent).responseJSON
@@ -124,7 +136,10 @@ class MainVC: UIViewController , UITableViewDelegate , UITableViewDataSource , U
         
         performSegue(withIdentifier: "UserPhotosVC" , sender: flickrUser)
     }
-    
+   
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+    }
     //MARK: - search bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == ""
@@ -134,6 +149,7 @@ class MainVC: UIViewController , UITableViewDelegate , UITableViewDataSource , U
         }
         else
         {
+            //
             inSearchMode = true
             flickrUserFilterdArray = flickrUserArray.filter({$0.imageTitle.range(of:searchBar.text!) != nil})
             tableView.reloadData()
@@ -155,6 +171,12 @@ class MainVC: UIViewController , UITableViewDelegate , UITableViewDataSource , U
         }
     }
 
+    //MARK: - ibactions
+    @IBAction func signOutBtnPressed(_ sender: Any) {
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        let LandingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingVC")
+        delegate?.window?.rootViewController = LandingVC
+    }
 
 }
 
