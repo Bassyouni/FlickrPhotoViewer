@@ -27,9 +27,8 @@ class FlickrCell: UITableViewCell {
             self.titleLabel.text = flickrUser.imageTitle
         }
         
-        let urlString = "https://farm\(flickrUser.farm).staticflickr.com/\(flickrUser.server)/\(flickrUser.imageID)_\(flickrUser.secret).jpg"
-        let url = URL(string: urlString)
-        self.flickrImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
+        let photoUrl = urlOfPhoto(flickrUser: flickrUser)
+        self.flickrImage.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholder.png"))
     }
 
 

@@ -8,23 +8,29 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class UserPhotosVC: ParentViewController , UITableViewDelegate , UITableViewDataSource {
     
     //MARK: - iboutlet
     @IBOutlet weak var tableView: UITableView!
 
-    
     //MARK: - variables
-    var usersPhotoArray = [FlickrUser]()
+    var usersPhotos = [ImageOfFlickrUser]()
     var currentUser: FlickrUser!
     
+    //MARK: - view DidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(urlForGetUserPhotos)
+        //remove navbar back btn
+        if let topItem = self.navigationController?.navigationBar.topItem
+        {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "" , style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
         tableView.delegate = self
         tableView.dataSource = self
         showLoading()
+        //This function starts when the closure ends
         grabDataFromApi {
             self.tableView.reloadData()
             self.hideLoading()
@@ -32,8 +38,11 @@ class UserPhotosVC: ParentViewController , UITableViewDelegate , UITableViewData
     }
     
     //MARK: - Api Call
+    /// This fucntion uses Alamofire to make json calls and return Flickr user public photos
+    /// - Parameter complete:
     func grabDataFromApi(complete :@escaping downloadCompleted)
     {
+        print("\(urlForGetUserPhotos)\(currentUser.userID)")
         Alamofire.request("\(urlForGetUserPhotos)\(currentUser.userID)").responseJSON
             {
                 response in
@@ -50,8 +59,8 @@ class UserPhotosVC: ParentViewController , UITableViewDelegate , UITableViewData
                                 {
                                     for obj in photoArray
                                     {
-                                        let tempUser = FlickrUser(dic: obj)
-                                        self.usersPhotoArray.append(tempUser)
+                                        let tempImage = ImageOfFlickrUser(dic: obj)
+                                        self.usersPhotos.append(tempImage)
                                     }
                                 }
                             }
@@ -73,13 +82,14 @@ class UserPhotosVC: ParentViewController , UITableViewDelegate , UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usersPhotoArray.count
+        return usersPhotos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FlickrCell", for: indexPath) as? userTableViewCell
         {
-            cell.configureCell(flickrUser: usersPhotoArray[indexPath.row])
+            let tempImage = usersPhotos[indexPath.row]
+            cell.configureCell(ImageOfUser: tempImage)
             return cell
         }
         else
@@ -94,18 +104,21 @@ class UserPhotosVC: ParentViewController , UITableViewDelegate , UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "FullImageVC", sender: usersPhotoArray[indexPath.row])
+        performSegue(withIdentifier: "FullImageVC", sender: usersPhotos[indexPath.row])
     }
     
+    //MARK: - segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FullImageVC
         {
-            if let user = sender as? FlickrUser
+            if let user = sender as? ImageOfFlickrUser
             {
-               destination.currentUser = user
+               destination.currentImage = user
             }
         }
     }
+    
+    
     
 
     

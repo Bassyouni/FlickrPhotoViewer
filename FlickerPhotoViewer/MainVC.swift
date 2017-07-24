@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource , UISearchBarDelegate {
     
@@ -19,7 +20,7 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
     var flickrUserArray = [FlickrUser]()
     var flickrUserFilterdArray = [FlickrUser]()
 
-    
+    //MARK: - view DidLoad & DidAppear
     override func viewDidLoad() {
         super.viewDidLoad()
         inSearchMode = false
@@ -27,7 +28,10 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
         tableView.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        print(CurrentUser.name!)
+        print(CurrentUser.id!)
         showLoading()
+        //This function starts when the closure ends
         self.grabDataFromApi {
             
             self.hideLoading()
@@ -140,6 +144,7 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
     }
+    
     //MARK: - search bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == ""
@@ -149,7 +154,7 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
         }
         else
         {
-            //
+            //Filters array based on Title
             inSearchMode = true
             flickrUserFilterdArray = flickrUserArray.filter({$0.imageTitle.range(of:searchBar.text!) != nil})
             tableView.reloadData()

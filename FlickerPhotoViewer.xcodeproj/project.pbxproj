@@ -10,6 +10,7 @@
 		298556C4642E4681094F7B98 /* Pods_FlickerPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335A979491C2C12A198ED2E /* Pods_FlickerPhotoViewer.framework */; };
 		B8068E051F1F5EEE00D54653 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8068E031F1F5EEE00D54653 /* MBProgressHUD.m */; };
 		B8068E061F1F5EEE00D54653 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8068E041F1F5EEE00D54653 /* ParentViewController.swift */; };
+		B8105CBD1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8105CBB1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodeld */; };
 		B81320061F20C8300038FE6B /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320051F20C8300038FE6B /* LandingViewController.swift */; };
 		B813200F1F20D9460038FE6B /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B813200B1F20D9460038FE6B /* MFSideMenuContainerViewController.m */; };
 		B81320101F20D9460038FE6B /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = B813200C1F20D9460038FE6B /* MFSideMenuShadow.m */; };
@@ -26,6 +27,7 @@
 		B8786A861F1CADE90047294E /* FlickrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A851F1CADE90047294E /* FlickrCell.swift */; };
 		B8786A881F1CB3BE0047294E /* FlickrUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A871F1CB3BE0047294E /* FlickrUser.swift */; };
 		B8786A8B1F1CB5720047294E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A8A1F1CB5720047294E /* Constants.swift */; };
+		B893D6551F2683B5009328AE /* ImageOfFlickrUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B893D6541F2683B5009328AE /* ImageOfFlickrUser.swift */; };
 		B89424C41F1CD22F0003CD33 /* UserPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89424C31F1CD22F0003CD33 /* UserPhotosVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,7 @@
 		B8068E021F1F5EEE00D54653 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B8068E031F1F5EEE00D54653 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B8068E041F1F5EEE00D54653 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		B8105CBC1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlickerPhotoViewer.xcdatamodel; sourceTree = "<group>"; };
 		B81320051F20C8300038FE6B /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		B81320081F20D9460038FE6B /* MFSideMenuShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenuShadow.h; sourceTree = "<group>"; };
 		B81320091F20D9460038FE6B /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenu.h; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		B81320141F20DB190038FE6B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		B81320161F20EC960038FE6B /* userTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userTableViewCell.swift; sourceTree = "<group>"; };
 		B81320181F20F5B80038FE6B /* FullImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
+		B8437B401F25DAE8004B3EFA /* FlickerPhotoViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlickerPhotoViewer.entitlements; sourceTree = "<group>"; };
 		B8786A6D1F1CA5E60047294E /* FlickerPhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerPhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8786A701F1CA5E60047294E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8786A721F1CA5E60047294E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		B8786A851F1CADE90047294E /* FlickrCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrCell.swift; sourceTree = "<group>"; };
 		B8786A871F1CB3BE0047294E /* FlickrUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrUser.swift; sourceTree = "<group>"; };
 		B8786A8A1F1CB5720047294E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B893D6541F2683B5009328AE /* ImageOfFlickrUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOfFlickrUser.swift; sourceTree = "<group>"; };
 		B89424C31F1CD22F0003CD33 /* UserPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotosVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +132,8 @@
 				B8786A771F1CA5E60047294E /* Assets.xcassets */,
 				B8786A791F1CA5E60047294E /* LaunchScreen.storyboard */,
 				B8786A7C1F1CA5E60047294E /* Info.plist */,
+				B8105CBB1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodeld */,
+				B8437B401F25DAE8004B3EFA /* FlickerPhotoViewer.entitlements */,
 			);
 			path = FlickerPhotoViewer;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B8786A871F1CB3BE0047294E /* FlickrUser.swift */,
+				B893D6541F2683B5009328AE /* ImageOfFlickrUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -217,8 +225,14 @@
 				TargetAttributes = {
 					B8786A6C1F1CA5E60047294E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R9APBUX8U9;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -314,9 +328,11 @@
 				B8786A731F1CA5E60047294E /* MainVC.swift in Sources */,
 				B8786A711F1CA5E60047294E /* AppDelegate.swift in Sources */,
 				B8068E061F1F5EEE00D54653 /* ParentViewController.swift in Sources */,
+				B8105CBD1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodeld in Sources */,
 				B81320061F20C8300038FE6B /* LandingViewController.swift in Sources */,
 				B81320131F20DB080038FE6B /* SideViewController.swift in Sources */,
 				B81320111F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				B893D6551F2683B5009328AE /* ImageOfFlickrUser.swift in Sources */,
 				B81320191F20F5B80038FE6B /* FullImageVC.swift in Sources */,
 				B81320171F20EC960038FE6B /* userTableViewCell.swift in Sources */,
 				B81320151F20DB190038FE6B /* SideMenuTableViewCell.swift in Sources */,
@@ -446,10 +462,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlickerPhotoViewer/FlickerPhotoViewer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R9APBUX8U9;
 				INFOPLIST_FILE = FlickerPhotoViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlickerPhotoViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FlickerPhotoViewer/FlickerPhotoViewer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -462,10 +482,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlickerPhotoViewer/FlickerPhotoViewer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R9APBUX8U9;
 				INFOPLIST_FILE = FlickerPhotoViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlickerPhotoViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FlickerPhotoViewer/FlickerPhotoViewer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -493,6 +517,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B8105CBB1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B8105CBC1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodel */,
+			);
+			currentVersion = B8105CBC1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodel */;
+			path = FlickerPhotoViewer.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B8786A651F1CA5E60047294E /* Project object */;
 }

@@ -71,11 +71,21 @@ class FlickrUser
                 return _image!
             }
         }
-        set {
+        set
+        {
             _image = newValue
         }
     }
     
     
     
+}
+
+
+//MARK: - Euatable overlaod
+
+//For array opertaion like Contain and index of
+extension FlickrUser: Equatable { }
+func ==(lhs: FlickrUser, rhs: FlickrUser) -> Bool {
+    return lhs.imageID == rhs.imageID 
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import CoreData
 
 class SideViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
 
@@ -25,12 +27,22 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
         super.viewDidLoad()
         
         // set name
-        self.lblWelcome.text = NSLocalizedString("welcome", comment: "")
-        self.lblName.text = userFName + " " + userLName
-        
-        if userImage == ""
+        self.lblWelcome.text = NSLocalizedString("Welcome", comment: "")
+        self.lblName.text = CurrentUser.name!
+       
+        if CurrentUser.imageURL! == ""
         {
             self.imgProfile.image = UIImage(named: "IconDefault")
+        }else
+        {
+            self.imgProfile.sd_setImage(with: URL(string: CurrentUser.imageURL!), placeholderImage: UIImage(named: "IconDefault"))
+            
+            //for a round image
+            imgProfile.layer.borderWidth = 1.0
+            imgProfile.layer.masksToBounds = false
+            imgProfile.layer.borderColor = UIColor.white.cgColor
+            imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+            imgProfile.clipsToBounds = true
         }
         
         

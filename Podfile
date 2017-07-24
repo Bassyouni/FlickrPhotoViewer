@@ -6,6 +6,12 @@ use_frameworks!
   target 'FlickerPhotoViewer' do
   pod 'Alamofire', '~> 4.0'
   pod 'SDWebImage'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
   end
 
