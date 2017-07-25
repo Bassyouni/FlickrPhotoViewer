@@ -22,7 +22,8 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
 
     //MARK: - view DidLoad & DidAppear
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        navbarMenuBtnInit()
         inSearchMode = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -36,14 +37,27 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
             
             self.hideLoading()
             self.tableView.reloadData()
-            
         }
-        
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    
+    //MARK: - Navbar init and side menu toggle
+    func navbarMenuBtnInit()
+    {
+        let button = UIButton.init(type: .custom)
+        button.setImage(UIImage.init(named: "sideMenuBtn"), for: UIControlState.normal)
+        button.addTarget(self, action:#selector(MainVC.toggleSideMenu), for: UIControlEvents.touchUpInside)
+        button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 30, 30)
+        let barButton = UIBarButtonItem.init(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    /// Opens and Closes Side menu
+    func toggleSideMenu() {
+        self.menuContainerViewController.toggleLeftSideMenuCompletion({})
     }
     
     //MARK: - Api Call
@@ -176,12 +190,6 @@ class MainVC: ParentViewController , UITableViewDelegate , UITableViewDataSource
         }
     }
 
-    //MARK: - ibactions
-    @IBAction func signOutBtnPressed(_ sender: Any) {
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        let LandingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingVC")
-        delegate?.window?.rootViewController = LandingVC
-    }
 
 }
 

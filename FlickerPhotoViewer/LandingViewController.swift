@@ -23,6 +23,8 @@ class LandingViewController: ParentViewController {
         
         self.facebookLoginBtn.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside)
         
+        // un comment this if you want to delete all data
+        /*
         do{
             let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
             let request = NSBatchDeleteRequest(fetchRequest: fetch)
@@ -31,13 +33,14 @@ class LandingViewController: ParentViewController {
         {
             print("something went wrong")
         }
-        
+        */
        
     }
     
     //MARK: - LoginFucntions
     /// Calls login facebook api to handle all the login and returns users data as specfied and then parse it and send it the performFetch() to handle the saving!
     @objc func loginButtonClicked() {
+        showLoading()
         let loginManager = LoginManager()
         loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
             switch loginResult {
@@ -46,7 +49,7 @@ class LandingViewController: ParentViewController {
             case .cancelled:
                 print("User cancelled login.")
             case .success( _, _, _):
-                self.showLoading()
+               // self.showLoading()
                 print("Logged in!")
                 
                 let connection = GraphRequestConnection()

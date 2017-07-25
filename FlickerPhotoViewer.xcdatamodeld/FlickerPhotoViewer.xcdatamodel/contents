@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Download" representedClassName="Download" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="toUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="toDownload" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="Likes" representedClassName="Likes" syncable="YES" codeGenerationType="class">
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,10 +16,12 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toDownload" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Download" inverseName="toUser" inverseEntity="Download" syncable="YES"/>
         <relationship name="toLikes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Likes" inverseName="toUser" inverseEntity="Likes" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Likes" positionX="-344" positionY="9" width="128" height="103"/>
+        <element name="User" positionX="-101" positionY="27" width="128" height="135"/>
+        <element name="Download" positionX="126" positionY="36" width="128" height="90"/>
     </elements>
 </model>

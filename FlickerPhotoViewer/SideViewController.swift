@@ -19,7 +19,7 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
     @IBOutlet var imgProfile : UIImageView!
     
     //MARK: - variables
-    var arrMenuTxt : [String] = ["Favourites" , "Downloaded"]
+    var arrMenuTxt : [String] = ["Latest","Favourites" , "Downloaded"]
     var indexSelected : Int? = 0
     
     //MARK: - view
@@ -81,9 +81,33 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
         }, completion: {_ in
             self.indexSelected = indexPath.row
             self.tableMenu.reloadData()
-        })    }
+        })
+        if indexPath.row == 0
+        {
+            let homeNav = self.storyboard?.instantiateViewController(withIdentifier: "MainVC")
+            menuContainerViewController.centerViewController = homeNav
+            self.menuContainerViewController.toggleLeftSideMenuCompletion({})
+        }
+        if indexPath.row == 1
+        {
+            let homeNav = self.storyboard?.instantiateViewController(withIdentifier: "LikesVC")
+            menuContainerViewController.centerViewController = homeNav
+            self.menuContainerViewController.toggleLeftSideMenuCompletion({})
+        }
+        else if indexPath.row == 2
+        {
+            let homeNav = self.storyboard?.instantiateViewController(withIdentifier: "DownloadVC")
+            menuContainerViewController.centerViewController = homeNav
+            self.menuContainerViewController.toggleLeftSideMenuCompletion({})
+        }
+    }
     
-    
+    //MARK: - ibactions
+    @IBAction func signOutBtnPressed(_ sender: Any) {
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        let LandingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingVC")
+        delegate?.window?.rootViewController = LandingVC
+    }
 
     
 

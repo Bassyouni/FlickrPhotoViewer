@@ -17,6 +17,7 @@ class FullImageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // it justs displays the picture
         let photoUrl = urlOfPhoto(imageOfUser: currentImage)
         self.image.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholder.png"))
         self.title = currentImage.imageTitle

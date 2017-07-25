@@ -14,6 +14,7 @@ class userTableViewCell: UITableViewCell {
     @IBOutlet weak var flickrImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var favBtn: UIButton!
+    @IBOutlet weak var downloadBtn: UIButton!
     
     var imageId: String!
    
@@ -46,16 +47,33 @@ class userTableViewCell: UITableViewCell {
         
         //for determining which is liked and which is not , I need to optmize it if i can
          let photoArry = CurrentUser.toLikes?.allObjects
+         var isLiked: Bool = false
          for obj in photoArry!
          {
             if (obj as AnyObject).imageId == ImageOfUser.imageID
             {
                 favBtn.setBackgroundImage(UIImage(named: "IconFavouriteFill"), for: UIControlState.normal)
+                isLiked = true
+                break
+            }
+        }
+        if !isLiked
+        {
+            favBtn.setBackgroundImage(UIImage(named: "IconFavourite"), for: UIControlState.normal)
+        }
+        
+        //to check if this image is downloaded or not
+        let array =  CurrentUser.toDownload?.allObjects
+        for obj in array!
+        {
+            if (obj as! Download).id == ImageOfUser.imageID
+            {
+                downloadBtn.alpha = 0.3
                 return
             }
         }
-        favBtn.setBackgroundImage(UIImage(named: "IconFavourite"), for: UIControlState.normal)
-
+        
+        downloadBtn.alpha = 1.0
     }
     
     
@@ -90,5 +108,34 @@ class userTableViewCell: UITableViewCell {
         ad.saveContext()
     }
 
+    /// Downloades image to the database
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func downloadBtnPressed(_ sender: UIButton) {
+        
+        self.downloadBtn.alpha = 0.3
+        let downloadedImage = Download(context: context)
+        downloadedImage.id = self.imageId
+        downloadedImage.image = self.flickrImage.image
+        
+        //if already downloaded just retrun
+        let array =  CurrentUser.toDownload?.allObjects
+        for obj in array!
+        {
+            if (obj as! Download).id == downloadedImage.id
+            {
+                return
+            }
+        }
+        
+        //else saveit to database and notify user
+        CurrentUser.addToToDownload(downloadedImage)
+        ad.saveContext()
+        print("Downloaded")
+        let alert = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("image downloaded", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: UIAlertActionStyle.default, handler: nil))
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        
+    }
 
 }
