@@ -34,7 +34,9 @@ func urlOfPhoto(imageOfUser: ImageOfFlickrUser) -> URL
 }
 
 //MARK: - user Constatns
-var CurrentUser = User()
+var CurrentUser: User!
+let facebook = "facebook"
+let linkedIn = "linkedIn"
 
 //MARK: - colors
 var pinkColor = UIColor(red: 253.0/255/0, green: 114.0/255.0, blue: 174.0/255.0, alpha: 0.7)

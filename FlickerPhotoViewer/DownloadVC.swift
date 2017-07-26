@@ -29,16 +29,12 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
     //MARK: - navBAr
     func navbarMenuBtnInit()
     {
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 75))
-        self.view.addSubview(navBar);
-        let navItem = UINavigationItem(title: "Download");
         let button = UIButton.init(type: .custom)
         button.setImage(UIImage.init(named: "sideMenuBtn"), for: UIControlState.normal)
-        button.addTarget(self, action:#selector(DownloadVC.toggleSideMenu), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action:#selector(MainVC.toggleSideMenu), for: UIControlEvents.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 30, 30)
         let barButton = UIBarButtonItem.init(customView: button)
-        navItem.leftBarButtonItem = barButton
-        navBar.setItems([navItem], animated: false);
+        self.navigationItem.leftBarButtonItem = barButton
         
     }
     
@@ -81,6 +77,11 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
     {
         let downloadImage  = controller.object(at:indexPath as IndexPath)
         cell.configureCell(downloadedImage: downloadImage)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let downloadImage  = controller.object(at:indexPath as IndexPath)
+        performSegue(withIdentifier: "FullImageVC2" , sender: downloadImage)
     }
     
     //MARK: - coreData
@@ -158,5 +159,19 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
             
         }
     }
+    
+    //MARK: - segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? FullImageVC
+        {
+            if let image = sender as? Download
+            {
+                let imageOfFlickrUser = ImageOfFlickrUser(image: (image.image as? UIImage)!, title: image.title!)
+                destination.currentImage = imageOfFlickrUser
+            }
+        }
+    }
+    
 
 }

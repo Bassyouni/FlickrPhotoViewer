@@ -27,6 +27,10 @@ class ImageOfFlickrUser
         self._imageTitle = dic["title"] as? String
         
     }
+    init(image: UIImage , title: String) {
+        self._image = image
+        self._imageTitle = title
+    }
     
     //MARK: - getters
     var imageID: String

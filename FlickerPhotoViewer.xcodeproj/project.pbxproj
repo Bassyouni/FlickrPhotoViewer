@@ -19,6 +19,7 @@
 		B81320151F20DB190038FE6B /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320141F20DB190038FE6B /* SideMenuTableViewCell.swift */; };
 		B81320171F20EC960038FE6B /* userTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320161F20EC960038FE6B /* userTableViewCell.swift */; };
 		B81320191F20F5B80038FE6B /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81320181F20F5B80038FE6B /* FullImageVC.swift */; };
+		B8342A9D1F28D23D00EDCBBD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8342A9C1F28D23D00EDCBBD /* WebViewController.swift */; };
 		B8786A711F1CA5E60047294E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A701F1CA5E60047294E /* AppDelegate.swift */; };
 		B8786A731F1CA5E60047294E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A721F1CA5E60047294E /* MainVC.swift */; };
 		B8786A761F1CA5E60047294E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8786A741F1CA5E60047294E /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		B81320141F20DB190038FE6B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		B81320161F20EC960038FE6B /* userTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userTableViewCell.swift; sourceTree = "<group>"; };
 		B81320181F20F5B80038FE6B /* FullImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
+		B8342A9C1F28D23D00EDCBBD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B8437B401F25DAE8004B3EFA /* FlickerPhotoViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlickerPhotoViewer.entitlements; sourceTree = "<group>"; };
 		B8786A6D1F1CA5E60047294E /* FlickerPhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerPhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8786A701F1CA5E60047294E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				B81320051F20C8300038FE6B /* LandingViewController.swift */,
+				B8342A9C1F28D23D00EDCBBD /* WebViewController.swift */,
 			);
 			name = "Landing VC";
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				B81320131F20DB080038FE6B /* SideViewController.swift in Sources */,
 				B8DCD2301F274F770081CB01 /* DownloadVC.swift in Sources */,
 				B81320111F20D9460038FE6B /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				B8342A9D1F28D23D00EDCBBD /* WebViewController.swift in Sources */,
 				B8DCD2321F2756430081CB01 /* LikesCell.swift in Sources */,
 				B893D6551F2683B5009328AE /* ImageOfFlickrUser.swift in Sources */,
 				B81320191F20F5B80038FE6B /* FullImageVC.swift in Sources */,

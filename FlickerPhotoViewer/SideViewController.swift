@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import CoreData
+import FacebookCore
 
 class SideViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
 
@@ -30,7 +31,7 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
         self.lblWelcome.text = NSLocalizedString("Welcome", comment: "")
         self.lblName.text = CurrentUser.name!
        
-        if CurrentUser.imageURL! == ""
+        if CurrentUser.imageURL == "" || CurrentUser.imageURL == nil
         {
             self.imgProfile.image = UIImage(named: "IconDefault")
         }else
@@ -104,6 +105,8 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     //MARK: - ibactions
     @IBAction func signOutBtnPressed(_ sender: Any) {
+        AccessToken.current = nil
+        UserDefaults.standard.removeObject(forKey: "LIAccessToken")
         let delegate = UIApplication.shared.delegate as? AppDelegate
         let LandingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingVC")
         delegate?.window?.rootViewController = LandingVC

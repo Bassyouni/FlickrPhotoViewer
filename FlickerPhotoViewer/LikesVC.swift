@@ -12,7 +12,7 @@ import CoreData
 class LikesVC: UIViewController, UITableViewDelegate, UITableViewDataSource,NSFetchedResultsControllerDelegate {
     
     //MARK: - iboutles and varibales
-    var controller : NSFetchedResultsController<Likes>!
+    var controller : NSFetchedResultsController<Likes>?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -62,7 +62,7 @@ class LikesVC: UIViewController, UITableViewDelegate, UITableViewDataSource,NSFe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if let sections = controller.sections
+        if let sections = controller!.sections
         {
             let sectionsInfo = sections[section]
             return sectionsInfo.numberOfObjects
@@ -84,13 +84,17 @@ class LikesVC: UIViewController, UITableViewDelegate, UITableViewDataSource,NSFe
     
     func configureCell(cell : LikesCell , indexPath :NSIndexPath)
     {
-        let like  = controller.object(at:indexPath as IndexPath)
-        cell.configureCell(likedPhoto: like)
+        let like  = controller?.object(at:indexPath as IndexPath)
+        cell.configureCell(likedPhoto: like!)
     }
     
     //MARK: - coreData
     func attemptFetch()
     {
+        if controller != nil
+        {
+            return
+        }
         // get all Photos based on the logged in user
         let fetchRequest :NSFetchRequest<Likes> = Likes.fetchRequest()
         
@@ -100,13 +104,13 @@ class LikesVC: UIViewController, UITableViewDelegate, UITableViewDataSource,NSFe
         
         fetchRequest.sortDescriptors = [datasort]
         
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
-        controller.delegate = self
-        self.controller = controller
+        controller?.delegate = self
+//        self.controller = controller
         
         do{
-            try controller.performFetch()
+            try controller?.performFetch()
         }
         catch{
             let error = error as NSError

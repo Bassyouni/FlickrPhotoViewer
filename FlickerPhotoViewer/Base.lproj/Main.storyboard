@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flickr-logo-png-3" translatesAutoresizingMaskIntoConstraints="NO" id="hXc-84-QuD">
-                                        <rect key="frame" x="-12.5" y="0.0" width="400" height="277"/>
+                                        <rect key="frame" x="-12.5" y="0.0" width="400" height="276.5"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlickrName" translatesAutoresizingMaskIntoConstraints="NO" id="MFM-e1-IZb">
                                         <rect key="frame" x="0.0" y="558" width="375" height="109"/>
@@ -35,7 +35,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VqA-dQ-AiT">
-                                        <rect key="frame" x="20" y="314" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="261" width="335" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-logo-png-white-5117" translatesAutoresizingMaskIntoConstraints="NO" id="yah-Ea-HN2">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -60,19 +60,32 @@
                                             <constraint firstAttribute="height" constant="50" id="TRo-d0-BxS"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNY-po-W0u">
+                                        <rect key="frame" x="20" y="373" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7k6-Fe-u51"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Sign-in-Large---Default-1"/>
+                                        <connections>
+                                            <segue destination="kKK-2w-pdK" kind="show" id="DlU-tj-G1k"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MFM-e1-IZb" secondAttribute="trailing" id="7rJ-WS-uyj"/>
                                     <constraint firstItem="VqA-dQ-AiT" firstAttribute="centerX" secondItem="JqU-Rz-z02" secondAttribute="centerX" id="GPa-TY-bWh"/>
                                     <constraint firstItem="hXc-84-QuD" firstAttribute="centerX" secondItem="JqU-Rz-z02" secondAttribute="centerX" id="H8r-Rn-K79"/>
-                                    <constraint firstItem="VqA-dQ-AiT" firstAttribute="centerY" secondItem="JqU-Rz-z02" secondAttribute="centerY" constant="5" id="Jeq-mA-kDN"/>
+                                    <constraint firstItem="VqA-dQ-AiT" firstAttribute="centerY" secondItem="JqU-Rz-z02" secondAttribute="centerY" constant="-47.5" id="Jeq-mA-kDN"/>
                                     <constraint firstAttribute="bottom" secondItem="MFM-e1-IZb" secondAttribute="bottom" id="Mzj-gd-lJ3"/>
                                     <constraint firstItem="VqA-dQ-AiT" firstAttribute="leading" secondItem="JqU-Rz-z02" secondAttribute="leading" constant="20" id="WiM-QL-SM2"/>
+                                    <constraint firstItem="lNY-po-W0u" firstAttribute="leading" secondItem="JqU-Rz-z02" secondAttribute="leading" constant="20" id="cxA-t5-o5m"/>
                                     <constraint firstAttribute="trailing" secondItem="VqA-dQ-AiT" secondAttribute="trailing" constant="20" id="ezM-W3-iGZ"/>
+                                    <constraint firstItem="lNY-po-W0u" firstAttribute="top" secondItem="KoM-bf-Nuy" secondAttribute="bottom" constant="62" id="hob-VV-B9d"/>
                                     <constraint firstItem="MFM-e1-IZb" firstAttribute="leading" secondItem="JqU-Rz-z02" secondAttribute="leading" id="kYq-On-fYj"/>
+                                    <constraint firstAttribute="trailing" secondItem="lNY-po-W0u" secondAttribute="trailing" constant="20" id="ops-jq-chS"/>
                                     <constraint firstItem="hXc-84-QuD" firstAttribute="top" secondItem="JqU-Rz-z02" secondAttribute="top" id="rvk-uO-s54"/>
-                                    <constraint firstItem="VqA-dQ-AiT" firstAttribute="top" secondItem="hXc-84-QuD" secondAttribute="bottom" constant="37" id="wjH-YV-d2A"/>
+                                    <constraint firstItem="VqA-dQ-AiT" firstAttribute="top" secondItem="hXc-84-QuD" secondAttribute="bottom" constant="-15.5" id="wjH-YV-d2A"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -86,11 +99,12 @@
                     </view>
                     <connections>
                         <outlet property="facebookLoginBtn" destination="KoM-bf-Nuy" id="SiU-Eu-EVi"/>
+                        <outlet property="linkedInBtn" destination="lNY-po-W0u" id="A8o-ap-6Sj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY2-2D-aiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284.0579710144928" y="18.75"/>
+            <point key="canvasLocation" x="-399.19999999999999" y="35.532233883058474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JMS-G8-3qU">
@@ -107,7 +121,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R58-so-rAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-397" y="36"/>
+            <point key="canvasLocation" x="430" y="36"/>
         </scene>
         <!--Flickr Photo Search-->
         <scene sceneID="6bY-KM-0Aj">
@@ -200,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd1-YB-ACs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528.79999999999995" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1441" y="36"/>
         </scene>
         <!--    More Photos From This User-->
         <scene sceneID="pM8-XA-wMd">
@@ -299,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozS-g4-c4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421.5999999999999" y="35.532233883058474"/>
+            <point key="canvasLocation" x="2452" y="36"/>
         </scene>
         <!--Full ImageVC-->
         <scene sceneID="Pxj-0Z-iqw">
@@ -362,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYH-7c-gFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283.5082458770617" y="53.600000000000001"/>
+            <point key="canvasLocation" x="4158" y="331"/>
         </scene>
         <!--Side View Controller-->
         <scene sceneID="OkR-hc-xCA">
@@ -418,7 +432,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-zd-yjA">
-                                                    <rect key="frame" x="35" y="20" width="624" height="21"/>
+                                                    <rect key="frame" x="35" y="20" width="332" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -581,10 +595,10 @@
             </objects>
             <point key="canvasLocation" x="429.60000000000002" y="766.86656671664173"/>
         </scene>
-        <!--DownloadVC-->
+        <!--Downloads-->
         <scene sceneID="SCu-yg-7yR">
             <objects>
-                <viewController storyboardIdentifier="DownloadVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OQX-Oe-klA" customClass="DownloadVC" customModule="FlickerPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OQX-Oe-klA" customClass="DownloadVC" customModule="FlickerPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sg9-S7-Vpy"/>
                         <viewControllerLayoutGuide type="bottom" id="6HH-62-ccg"/>
@@ -594,7 +608,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="311" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E7a-vc-D9E">
-                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DownloadCell" rowHeight="311" id="71d-40-3YW" customClass="DownloadCell" customModule="FlickerPhotoViewer" customModuleProvider="target">
@@ -648,27 +662,99 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E7a-vc-D9E" firstAttribute="leading" secondItem="KdD-8z-EJW" secondAttribute="leading" id="atP-ED-sgY"/>
-                            <constraint firstItem="6HH-62-ccg" firstAttribute="top" secondItem="E7a-vc-D9E" secondAttribute="bottom" id="oRh-Rq-EqX"/>
-                            <constraint firstItem="E7a-vc-D9E" firstAttribute="top" secondItem="sg9-S7-Vpy" secondAttribute="bottom" constant="75" id="pZU-y5-kM8"/>
-                            <constraint firstAttribute="trailing" secondItem="E7a-vc-D9E" secondAttribute="trailing" id="rcH-Zd-1Hd"/>
+                            <constraint firstAttribute="trailing" secondItem="E7a-vc-D9E" secondAttribute="trailing" id="C54-Ta-yNr"/>
+                            <constraint firstItem="E7a-vc-D9E" firstAttribute="leading" secondItem="KdD-8z-EJW" secondAttribute="leading" id="OVi-tY-chd"/>
+                            <constraint firstItem="E7a-vc-D9E" firstAttribute="top" secondItem="KdD-8z-EJW" secondAttribute="top" id="iW3-T1-4OM"/>
+                            <constraint firstItem="6HH-62-ccg" firstAttribute="top" secondItem="E7a-vc-D9E" secondAttribute="bottom" id="uK6-LI-7oO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Downloads" id="0b6-ZZ-FFH"/>
                     <connections>
                         <outlet property="tableView" destination="E7a-vc-D9E" id="2uN-Ku-aen"/>
+                        <segue destination="hiK-W7-CDO" kind="show" identifier="FullImageVC2" id="hoF-aY-5fz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="788-Rj-hAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220.2398800599701" y="767.20000000000005"/>
+            <point key="canvasLocation" x="2452" y="766.86656671664173"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Xa-Bi-urv">
+            <objects>
+                <navigationController storyboardIdentifier="DownloadVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WOl-Wg-OjW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w8c-kU-zhS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OQX-Oe-klA" kind="relationship" relationship="rootViewController" id="ZJC-3H-op7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69R-5y-tgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="767"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="dsM-Mf-Mak">
+            <objects>
+                <viewController id="kKK-2w-pdK" customClass="WebViewController" customModule="FlickerPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Ly-7L-ybq"/>
+                        <viewControllerLayoutGuide type="bottom" id="oTs-JY-l3y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hb0-qf-pap">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7N-NR-ozo">
+                                <rect key="frame" x="-4" y="20" width="383" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Vee-Zq-Vv5"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="eLj-HD-RoE">
+                                        <connections>
+                                            <action selector="dismiss:" destination="kKK-2w-pdK" id="usL-Ah-zUW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-Ki-1ed">
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
+                                <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v7N-NR-ozo" firstAttribute="top" secondItem="8Ly-7L-ybq" secondAttribute="bottom" id="1c5-it-Me3"/>
+                            <constraint firstItem="QeM-Ki-1ed" firstAttribute="leading" secondItem="hb0-qf-pap" secondAttribute="leadingMargin" constant="-20" id="5vw-WJ-32U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QeM-Ki-1ed" secondAttribute="trailing" constant="-20" id="MeB-ko-Wve"/>
+                            <constraint firstItem="v7N-NR-ozo" firstAttribute="leading" secondItem="hb0-qf-pap" secondAttribute="leadingMargin" constant="-20" id="QVO-K4-NTR"/>
+                            <constraint firstItem="oTs-JY-l3y" firstAttribute="top" secondItem="QeM-Ki-1ed" secondAttribute="bottom" id="bsZ-dQ-6vd"/>
+                            <constraint firstItem="QeM-Ki-1ed" firstAttribute="top" secondItem="v7N-NR-ozo" secondAttribute="bottom" id="do2-Kd-DgN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v7N-NR-ozo" secondAttribute="trailing" constant="-20" id="wC6-ha-r2i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="QeM-Ki-1ed" id="6B7-mT-dcs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGw-Kz-fet" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399" y="-631"/>
         </scene>
     </scenes>
     <resources>
         <image name="FlickrName" width="408" height="123"/>
         <image name="IconFavorate" width="30" height="24"/>
+        <image name="Sign-in-Large---Default-1" width="215" height="41"/>
         <image name="facebook-logo-png-white-5117" width="1250" height="1250"/>
         <image name="flickr-logo-png-3" width="400" height="300"/>
         <image name="if_download_1282959" width="128" height="128"/>
         <image name="next" width="258" height="452"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hoF-aY-5fz"/>
+    </inferredMetricsTieBreakers>
 </document>

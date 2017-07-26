@@ -117,6 +117,7 @@ class userTableViewCell: UITableViewCell {
         let downloadedImage = Download(context: context)
         downloadedImage.id = self.imageId
         downloadedImage.image = self.flickrImage.image
+        downloadedImage.title = self.titleLabel.text
         
         //if already downloaded just retrun
         let array =  CurrentUser.toDownload?.allObjects
