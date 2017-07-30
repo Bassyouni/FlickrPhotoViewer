@@ -30,6 +30,7 @@
 		B8786A8B1F1CB5720047294E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A8A1F1CB5720047294E /* Constants.swift */; };
 		B893D6551F2683B5009328AE /* ImageOfFlickrUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B893D6541F2683B5009328AE /* ImageOfFlickrUser.swift */; };
 		B89424C41F1CD22F0003CD33 /* UserPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89424C31F1CD22F0003CD33 /* UserPhotosVC.swift */; };
+		B8CAF8B01F29E04D00E883D9 /* ContainorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CAF8AF1F29E04D00E883D9 /* ContainorView.swift */; };
 		B8DCD22E1F27432D0081CB01 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCD22D1F27432C0081CB01 /* LikesVC.swift */; };
 		B8DCD2301F274F770081CB01 /* DownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCD22F1F274F770081CB01 /* DownloadVC.swift */; };
 		B8DCD2321F2756430081CB01 /* LikesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCD2311F2756430081CB01 /* LikesCell.swift */; };
@@ -71,6 +72,7 @@
 		B8786A8A1F1CB5720047294E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B893D6541F2683B5009328AE /* ImageOfFlickrUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOfFlickrUser.swift; sourceTree = "<group>"; };
 		B89424C31F1CD22F0003CD33 /* UserPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotosVC.swift; sourceTree = "<group>"; };
+		B8CAF8AF1F29E04D00E883D9 /* ContainorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainorView.swift; sourceTree = "<group>"; };
 		B8DCD22D1F27432C0081CB01 /* LikesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesVC.swift; sourceTree = "<group>"; };
 		B8DCD22F1F274F770081CB01 /* DownloadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadVC.swift; sourceTree = "<group>"; };
 		B8DCD2311F2756430081CB01 /* LikesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		B81320071F20D9350038FE6B /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				B8CAF8AF1F29E04D00E883D9 /* ContainorView.swift */,
 				B81320081F20D9460038FE6B /* MFSideMenuShadow.h */,
 				B81320091F20D9460038FE6B /* MFSideMenu.h */,
 				B813200A1F20D9460038FE6B /* MFSideMenuContainerViewController.h */,
@@ -389,6 +392,7 @@
 				B81320101F20D9460038FE6B /* MFSideMenuShadow.m in Sources */,
 				B8786A881F1CB3BE0047294E /* FlickrUser.swift in Sources */,
 				B8786A731F1CA5E60047294E /* MainVC.swift in Sources */,
+				B8CAF8B01F29E04D00E883D9 /* ContainorView.swift in Sources */,
 				B8786A711F1CA5E60047294E /* AppDelegate.swift in Sources */,
 				B8068E061F1F5EEE00D54653 /* ParentViewController.swift in Sources */,
 				B8105CBD1F260305002ADD6F /* FlickerPhotoViewer.xcdatamodeld in Sources */,

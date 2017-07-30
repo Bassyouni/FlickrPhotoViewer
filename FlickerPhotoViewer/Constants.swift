@@ -34,7 +34,7 @@ func urlOfPhoto(imageOfUser: ImageOfFlickrUser) -> URL
 }
 
 //MARK: - user Constatns
-var CurrentUser: User!
+var CurrentUser = User()
 let facebook = "facebook"
 let linkedIn = "linkedIn"
 

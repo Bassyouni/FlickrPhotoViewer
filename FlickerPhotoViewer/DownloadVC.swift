@@ -14,7 +14,9 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
     //MARK: - iboutles and varibales
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - variables
     var controller : NSFetchedResultsController<Download>!
+    weak var parentVC: SideViewController?
     
     //MARK: - view DidLoad
     override func viewDidLoad()
@@ -24,8 +26,20 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
         tableView.delegate = self
         tableView.dataSource = self
         attemptFetch()
+        
+        // create dummy navbar
+        if parentVC != nil
+        {
+            let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 65))
+            self.view.addSubview(navBar);
+            let navItem = UINavigationItem(title: "Pick From Downloads");
+            let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(DownloadVC.dismissVC));
+            navItem.leftBarButtonItem = doneItem;
+            navBar.setItems([navItem], animated: false);
+        }
+        
     }
-    
+
     //MARK: - navBAr
     func navbarMenuBtnInit()
     {
@@ -79,9 +93,21 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
         cell.configureCell(downloadedImage: downloadImage)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         let downloadImage  = controller.object(at:indexPath as IndexPath)
-        performSegue(withIdentifier: "FullImageVC2" , sender: downloadImage)
+        
+        if parentVC != nil
+        {
+            parentVC?.imgProfile.image = downloadImage.image as? UIImage
+            self.dismiss(animated: true, completion:nil)
+        }
+        else
+        {
+            performSegue(withIdentifier: "FullImageVC2" , sender: downloadImage)
+        }
+        
+        
     }
     
     //MARK: - coreData
@@ -171,6 +197,11 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
                 destination.currentImage = imageOfFlickrUser
             }
         }
+    }
+    
+    func dismissVC()
+    {
+        self.dismiss(animated: true, completion: nil)
     }
     
 
