@@ -38,20 +38,28 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
         self.lblWelcome.text = NSLocalizedString("Welcome", comment: "")
         self.lblName.text = CurrentUser.name!
        
-        if CurrentUser.imageURL == "" || CurrentUser.imageURL == nil
+        if (CurrentUser.imageURL == "" || CurrentUser.imageURL == nil) && CurrentUser.downloadedUserImage == nil
+
         {
             self.imgProfile.image = UIImage(named: "IconDefault")
-        }else
+            return
+        }
+        else if CurrentUser.downloadedUserImage != nil
+        {
+            self.imgProfile.image = CurrentUser.downloadedUserImage as? UIImage
+        }
+        else
         {
             self.imgProfile.sd_setImage(with: URL(string: CurrentUser.imageURL!), placeholderImage: UIImage(named: "IconDefault"))
-            
-            //for a round image
-            imgProfile.layer.borderWidth = 1.0
-            imgProfile.layer.masksToBounds = false
-            imgProfile.layer.borderColor = UIColor.white.cgColor
-            imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
-            imgProfile.clipsToBounds = true
+
         }
+        
+        //for a round image
+        imgProfile.layer.borderWidth = 1.0
+        imgProfile.layer.masksToBounds = false
+        imgProfile.layer.borderColor = UIColor.white.cgColor
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+        imgProfile.clipsToBounds = true
         
         
     }
@@ -143,12 +151,22 @@ class SideViewController: UIViewController , UITableViewDelegate , UITableViewDa
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func socialMediaphotoPressed(_ sender: Any) {
+        self.imgProfile.sd_setImage(with: URL(string: CurrentUser.imageURL!), placeholderImage: UIImage(named: "IconDefault"))
+        CurrentUser.downloadedUserImage = nil
+        ad.saveContext()
+        self.changePhotoMenu.isHidden = true
+    }
+    
+    
     //MARK: - image picking func's
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             imgProfile.image = image
+            CurrentUser.downloadedUserImage = image
+            ad.saveContext()
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }

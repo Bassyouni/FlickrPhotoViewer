@@ -100,6 +100,8 @@ class DownloadVC: UIViewController , UITableViewDelegate, UITableViewDataSource,
         if parentVC != nil
         {
             parentVC?.imgProfile.image = downloadImage.image as? UIImage
+            CurrentUser.downloadedUserImage = downloadImage.image
+            ad.saveContext()
             self.dismiss(animated: true, completion:nil)
         }
         else

@@ -44,7 +44,7 @@ class userTableViewCell: UITableViewCell {
 
         let photoURL = urlOfPhoto(imageOfUser: ImageOfUser)
         self.flickrImage.sd_setImage(with: photoURL, placeholderImage: UIImage(named: "placeholder.png"))
-        
+
         //for determining which is liked and which is not , I need to optmize it if i can
          let photoArry = CurrentUser.toLikes?.allObjects
          var isLiked: Bool = false
@@ -76,12 +76,21 @@ class userTableViewCell: UITableViewCell {
         downloadBtn.alpha = 1.0
     }
     
-    
+    func enableDownload()
+    {
+        
+    }
     /// Toggles between Saving Favourte's and Removing it using core data
     ///
     /// - Parameter sender: UIButton
     @IBAction func favBtnPressed(_ sender: UIButton)
     {
+        //make it inresponsive untile the photo is cashed
+        if flickrImage.image == UIImage(named: "placeholder.png")
+        {
+            return
+        }
+        
         var like = Likes(context:context)
         like.image = self.flickrImage.image
         like.imageId = self.imageId
@@ -112,6 +121,12 @@ class userTableViewCell: UITableViewCell {
     ///
     /// - Parameter sender: UIButton
     @IBAction func downloadBtnPressed(_ sender: UIButton) {
+        
+        //make it inresponsive untile the photo is cashed
+        if flickrImage.image == UIImage(named: "placeholder.png")
+        {
+            return
+        }
         
         self.downloadBtn.alpha = 0.3
         let downloadedImage = Download(context: context)

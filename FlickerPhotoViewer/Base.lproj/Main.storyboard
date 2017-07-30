@@ -492,7 +492,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-wb-bpv">
-                                <rect key="frame" x="16" y="142" width="230" height="190"/>
+                                <rect key="frame" x="16" y="142" width="230" height="251"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoL-Md-mk4">
                                         <rect key="frame" x="0.0" y="60" width="230" height="1"/>
@@ -543,6 +543,25 @@
                                             <action selector="photoFromCameraPressed:" destination="ShY-Qz-LEz" eventType="touchUpInside" id="EE6-2z-QN2"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48V-nJ-7b5">
+                                        <rect key="frame" x="0.0" y="192" width="230" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="Ajh-9F-tGt"/>
+                                            <constraint firstAttribute="height" constant="1" id="rbs-nv-Ria"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-Fd-P68">
+                                        <rect key="frame" x="5" y="192" width="220" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="bBT-3J-Wj3"/>
+                                            <constraint firstAttribute="width" constant="220" id="pho-IQ-UWS"/>
+                                        </constraints>
+                                        <state key="normal" title="Social Media Photo"/>
+                                        <connections>
+                                            <action selector="socialMediaphotoPressed:" destination="ShY-Qz-LEz" eventType="touchUpInside" id="1uq-Kk-ZYz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -550,13 +569,18 @@
                                     <constraint firstItem="lPp-RM-G0R" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" id="5je-cI-V5K"/>
                                     <constraint firstItem="bBB-wG-gjF" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" constant="5" id="FbL-yx-A2Y"/>
                                     <constraint firstItem="kHz-7A-4bL" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" constant="5" id="GuK-rD-KZG"/>
+                                    <constraint firstItem="48V-nJ-7b5" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" id="MdE-hi-dOg"/>
                                     <constraint firstItem="mer-wD-NIZ" firstAttribute="top" secondItem="ghj-wb-bpv" secondAttribute="top" id="ZbA-Si-5qb"/>
+                                    <constraint firstItem="Xtb-Fd-P68" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" constant="5" id="cX4-Bu-Oya"/>
+                                    <constraint firstItem="48V-nJ-7b5" firstAttribute="top" secondItem="bBB-wG-gjF" secondAttribute="bottom" constant="5" id="fuz-fh-zdu"/>
                                     <constraint firstItem="lPp-RM-G0R" firstAttribute="top" secondItem="kHz-7A-4bL" secondAttribute="bottom" id="jIr-H2-WJt"/>
                                     <constraint firstItem="DoL-Md-mk4" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" id="kg7-KR-aJT"/>
                                     <constraint firstItem="mer-wD-NIZ" firstAttribute="leading" secondItem="ghj-wb-bpv" secondAttribute="leading" constant="5" id="lyz-D8-0es"/>
+                                    <constraint firstItem="Xtb-Fd-P68" firstAttribute="top" secondItem="bBB-wG-gjF" secondAttribute="bottom" constant="5" id="pEi-lg-w5c"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xtb-Fd-P68" secondAttribute="trailing" constant="5" id="pFS-xo-LcS"/>
                                     <constraint firstItem="kHz-7A-4bL" firstAttribute="top" secondItem="mer-wD-NIZ" secondAttribute="bottom" constant="5" id="sdk-Qz-tHF"/>
                                     <constraint firstAttribute="width" constant="230" id="sri-tb-DM1"/>
-                                    <constraint firstAttribute="height" constant="190" id="wrQ-Wr-gc9"/>
+                                    <constraint firstAttribute="height" constant="251" id="wrQ-Wr-gc9"/>
                                     <constraint firstItem="bBB-wG-gjF" firstAttribute="top" secondItem="kHz-7A-4bL" secondAttribute="bottom" constant="2" id="z1B-QZ-EGn"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -848,7 +872,7 @@
         <image name="next" width="258" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZJC-3H-op7"/>
         <segue reference="hoF-aY-5fz"/>
+        <segue reference="4d6-zN-ZTU"/>
     </inferredMetricsTieBreakers>
 </document>
